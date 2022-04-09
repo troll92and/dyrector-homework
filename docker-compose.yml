@@ -11,3 +11,19 @@ services:
       MYSQL_DATABASE: "${MYSQL_DATABASE}"
       MYSQL_USER: "${MYSQL_USER}"
       MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+
+  api:
+    container_name: "cat-api"
+    build:
+      context: .
+      dockerfile: api.Dockerfile
+    environment:
+      MYSQL_HOST: mysql
+      MYSQL_PORT: "${MYSQL_PORT}"
+      MYSQL_USER: "${MYSQL_USER}"
+      MYSQL_PASSWORD: "${MYSQL_PASSWORD}"
+      MYSQL_DATABASE: "${MYSQL_DATABASE}"
+    ports:
+      - "8080:8080"
+    depends_on:
+      - mysql
