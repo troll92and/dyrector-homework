@@ -99,3 +99,6 @@ For bonus points you can:
 - add new cats into the db seed script `cat-service/db.go`
 - enlist some extension ideas into repository root `ideas.md`
 - create a dogs endpoint and ui section
+
+## Install instruction
+First you need to clone the repository after that you just need run the following command:"docker-compose up" in the projects folder.
