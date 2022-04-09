@@ -27,3 +27,14 @@ services:
       - "8080:8080"
     depends_on:
       - mysql
+
+  nginx:
+    container_name: "nginx"
+    image: nginx:latest
+    restart: always
+    ports:
+      - "60080:80"
+    volumes:
+      - ./web/:/usr/share/nginx/html/api
+volumes:
+  web:
